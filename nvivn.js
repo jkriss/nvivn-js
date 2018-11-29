@@ -1,0 +1,1 @@
+require('@nvivn/core/src/node-cli')

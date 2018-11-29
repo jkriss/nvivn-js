@@ -1,0 +1,1 @@
+require('@nvivn/core/src/server/secure')

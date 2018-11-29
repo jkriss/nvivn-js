@@ -1,0 +1,28 @@
+{
+  "name": "@nvivn/purejs",
+  "version": "0.0.5",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "bin": {
+    "nvivn-http": "bin/http.js",
+    "nvivn-https": "bin/https.js",
+    "nvivn": "bin/nvivn.js"
+  },
+  "scripts": {
+    "clean": "rm -r dist",
+    "build": "npm run clean && npm run build:http && npm run build:https && npm run build:nvivn",
+    "build:http": "ncc build http.js && terser dist/index.js -o dist/http.js && rm dist/index.js",
+    "build:https": "ncc build https.js && terser dist/index.js -o dist/https.js && rm dist/index.js",
+    "build:nvivn": "ncc build nvivn.js && terser dist/index.js -o dist/nvivn.js && rm dist/index.js"
+  },
+  "author": "Jesse Kriss <jesse@jklabs.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "@zeit/ncc": "^0.1.18",
+    "terser": "^3.10.12"
+  }
+}
