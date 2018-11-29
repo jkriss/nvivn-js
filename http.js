@@ -1,1 +1,0 @@
-require('@nvivn/core/src/server/standalone-http')()
